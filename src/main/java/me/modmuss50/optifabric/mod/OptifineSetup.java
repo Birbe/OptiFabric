@@ -29,6 +29,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -55,7 +56,7 @@ public class OptifineSetup {
 
 		byte[] modHash = fileHash(optifineModJar);
 
-		versionDir = new File(workingDir, OptifineVersion.version);
+		versionDir = new File(workingDir, OptifineVersion.optifineVersion);
 		if (!versionDir.exists()) {
 			versionDir.mkdirs();
 		}
@@ -233,7 +234,9 @@ public class OptifineSetup {
 		}
 		if (fabricLauncher.isDevelopment()) {
 			Path path = entrypointResult.get().getParent();
-			Path minecraftJar = path.resolve(String.format("minecraft-%s-client.jar", OptifineVersion.minecraftVersion)); //Lets hope you are using loom in dev
+			//Path minecraftJar = path.resolve(String.format("minecraft-%s-client.jar", OptifineVersion.minecraftVersion)); //Lets hope you are using loom in dev
+			Path minecraftJar = Paths.get("C:\\Users\\Birb\\AppData\\Roaming\\.minecraft\\versions\\1.8.9\\1.8.9.jar");
+			//TODO: this is hardcoded
 			if (!Files.exists(minecraftJar)) {
 				throw new FileNotFoundException("Could not find minecraft jar!");
 			}

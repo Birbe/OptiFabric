@@ -42,7 +42,7 @@ public class OptifabricSetup implements Runnable {
 			optifineRuntimeJar = runtime.getLeft();
 		} catch (Throwable e) {
 			if(!OptifabricError.hasError()){
-				OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBE;
+				OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBLE;
 				OptifabricError.setError("Failed to load optifine, check the log for more info \n\n " + e.getMessage());
 			}
 			throw new RuntimeException("Failed to setup optifine", e);
@@ -61,14 +61,14 @@ public class OptifabricSetup implements Runnable {
 		try {
 			if (!isVersionValid("fabric-renderer-indigo", ">=0.1.8")) {
 				if(!OptifabricError.hasError()){
-					OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBE;
+					OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBLE;
 					OptifabricError.setError("You are using an outdated version of Fabric (API), please update!\n\nDownload the jar from the link bellow and replace the existing Fabric (API) jar in your mods folder.", "https://www.curseforge.com/minecraft/mc-mods/fabric-api/files");
 					OptifabricError.setHelpButtonText("Download Fabric (API)");
 				}
 			}
 		} catch (Throwable e){
 			if(!OptifabricError.hasError()){
-				OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBE;
+				OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBLE;
 				OptifabricError.setError("Failed to load optifine, check the log for more info \n\n " + e.getMessage());
 			}
 			throw new RuntimeException("Failed to setup optifine", e);
@@ -84,7 +84,7 @@ public class OptifabricSetup implements Runnable {
 			}
 		}
 		if (!incompatibleMods.isEmpty()) {
-			OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBE;
+			OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBLE;
 			StringBuilder errorMessage = new StringBuilder("One or more mods have stated they are incompatible with OptiFabric\nPlease remove OptiFabric or the following mods:\n");
 			for (ModMetadata metadata : incompatibleMods) {
 				errorMessage.append(metadata.getName())
@@ -101,7 +101,7 @@ public class OptifabricSetup implements Runnable {
 		try {
 			if (!isVersionValid("fabricloader", ">=0.7.0")) {
 				if(!OptifabricError.hasError()){
-					OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBE;
+					OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBLE;
 					OptifabricError.setError("You are using an outdated version of Fabric Loader, please update!\n\nRe-run the installer, or update via your launcher. See the link for help!", "https://fabricmc.net/wiki/install");
 					OptifabricError.setHelpButtonText("Installation Instructions");
 					return false;
@@ -109,7 +109,7 @@ public class OptifabricSetup implements Runnable {
 			}
 		} catch (Throwable e){
 			if(!OptifabricError.hasError()){
-				OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBE;
+				OptifineVersion.jarType = OptifineVersion.JarType.INCOMPATIBLE;
 				OptifabricError.setError("Failed to load optifine, check the log for more info \n\n " + e.getMessage());
 			}
 			throw new RuntimeException("Failed to setup optifine", e);
