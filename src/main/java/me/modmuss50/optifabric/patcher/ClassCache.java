@@ -4,6 +4,10 @@ import org.apache.commons.lang3.Validate;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -72,6 +76,10 @@ public class ClassCache {
 			byte[] bytes = new byte[byteCount];
 			dis.readFully(bytes);
 			classCache.classes.put(name, bytes);
+			Path p = Paths.get("debug",name+".class");
+			Files.createDirectories(p.getParent());
+			Files.write(p,bytes, StandardOpenOption.CREATE);
+			System.out.println(p);
 		}
 
 		dis.close();

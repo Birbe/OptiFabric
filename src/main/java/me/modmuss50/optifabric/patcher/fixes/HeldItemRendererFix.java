@@ -29,7 +29,7 @@ public class HeldItemRendererFix implements ClassFixer {
 		Validate.notNull(oldNode, "Failed to find old " + renderFirstPersonItemName + " method");
 
 		InsnList insnList = new InsnList();
-		insnList.add(getInstList("net/optifine/Config", "isShaders", "()Z"));
+		insnList.add(getInstList("Config", "isShaders", "()Z"));
 
 		insnList.add(new VarInsnNode(Opcodes.ALOAD, 4));
 		insnList.add(getInstList("net/optifine/shaders/Shaders", "isSkipRenderHand", String.format("(L%s;)Z", handName)));

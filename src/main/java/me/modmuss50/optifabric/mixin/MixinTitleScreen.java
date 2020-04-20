@@ -35,7 +35,7 @@ public abstract class MixinTitleScreen extends Screen { //extends Screen
 	@Inject(method = "render", at = @At("RETURN"))
 	private void render(int int_1, int int_2, float float_1, CallbackInfo info) {
 		if (!OptifabricError.hasError()) {
-				this.drawString(MinecraftClient.getInstance().textRenderer, OptifineVersion.optifineVersion, 2, this.height - 20, 0xffffffff);
+			this.drawString(MinecraftClient.getInstance().textRenderer, OptifineVersion.optifineVersion, 2, this.height - 20, 0xffffffff);
 		}
 	}
 

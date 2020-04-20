@@ -16,25 +16,25 @@ public class OptifineFixer {
 
 	private OptifineFixer() {
 		//net/minecraft/client/render/chunk/ChunkBuilder$BuiltChunk
-		registerFix("class_851", new ChunkRendererFix());
-
-		//net/minecraft/client/render/block/BlockModelRenderer
-		registerFix("class_778", new BlockModelRendererFix());
-
-		//net/minecraft/client/Keyboard
-		registerFix("class_309", new KeyboardFix());
-
-		//net/minecraft/client/render/item/HeldItemRenderer
-		registerFix("class_759", new HeldItemRendererFix());
-
-		//net/minecraft/client/texture/SpriteAtlasTexture
-		registerFix("class_1059", new SpriteAtlasTextureFix());
-
-		//net/minecraft/client/particle/ParticleManager
-		skipClass("class_702");
-
-		//net/minecraft/client/render/item/HeldItemRenderer$1
-		skipClass("class_759$1");
+//		registerFix("class_851", new ChunkRendererFix());
+//
+//		//net/minecraft/client/render/block/BlockModelRenderer
+//		registerFix("class_778", new BlockModelRendererFix());
+//
+//		//net/minecraft/client/Keyboard
+//		registerFix("class_309", new KeyboardFix());
+//
+//		//net/minecraft/client/render/item/HeldItemRenderer
+//		registerFix("class_759", new HeldItemRendererFix());
+//
+//		//net/minecraft/client/texture/SpriteAtlasTexture
+//		registerFix("class_1059", new SpriteAtlasTextureFix());
+//
+//		//net/minecraft/client/particle/ParticleManager
+//		skipClass("class_702");
+//
+//		//net/minecraft/client/render/item/HeldItemRenderer$1
+//		skipClass("class_759$1");
 	}
 
 	private void registerFix(String className, ClassFixer classFixer) {
