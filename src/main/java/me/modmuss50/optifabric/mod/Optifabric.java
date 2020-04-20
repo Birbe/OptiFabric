@@ -11,15 +11,15 @@ public class Optifabric implements ModInitializer {
 
 	public static void checkForErrors() {
 		if (OptifabricError.hasError()) {
-			ConfirmScreen confirmScreen = new ConfirmScreen(t -> {
-				if (t) {
-					Util.getOperatingSystem().open(OptifabricError.getErrorURL());
-				} else {
-					MinecraftClient.getInstance().scheduleStop();
-				}
-			}, new LiteralText(Formatting.RED + "There was an error loading OptiFabric!"), new LiteralText(OptifabricError.getError()), Formatting.GREEN + OptifabricError.getHelpButtonText(), Formatting.RED + "Close Game");
+//			ConfirmScreen confirmScreen = new ConfirmScreen((t,a,b,c) -> {
+//				if (t) {
+//					Util.getOperatingSystem().open(OptifabricError.getErrorURL());
+//				} else {
+//					MinecraftClient.getInstance().scheduleStop();
+//				}
+//			}, new LiteralText(Formatting.RED + "There was an error loading OptiFabric!"), new LiteralText(OptifabricError.getError()), Formatting.GREEN + OptifabricError.getHelpButtonText(), Formatting.RED + "Close Game");
 
-			MinecraftClient.getInstance().openScreen(confirmScreen);
+			//MinecraftClient.getInstance().openScreen(confirmScreen);
 		}
 	}
 
